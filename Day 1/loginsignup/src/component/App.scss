@@ -1,0 +1,67 @@
+.signup,
+.login {
+	box-sizing: border-box;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	padding: 0 120px;
+	height: 100vh;
+	justify-content: center;
+	text-align: center;
+	font-family: sans-serif;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.signup {
+	border-right: 3px solid rgb(170, 21, 170);
+}
+.login {
+	border-left: 3px solid rgb(196, 20, 102);
+	padding: 0 170px;
+}
+input {
+	height: 25px;
+	padding: 14px;
+	margin: 10px 0;
+	border-radius: 10px;
+	background: rgb(241, 239, 239);
+	border: none;
+}
+.btn {
+	background: rgb(77, 77, 248);
+	color: white;
+	font-size: 1rem;
+	font-weight: 700;
+	padding: 15px 0;
+	margin: 20px 0 10px 0;
+	border: none;
+	border-radius: 10px;
+}
+.desc {
+	color: rgb(86, 130, 187);
+	font-size: 14px;
+	font-weight: 600;
+}
+.header {
+	font-weight: 600;
+	font-size: 1.3rem
+}
+.capital {
+	text-transform: capitalize;
+}
+.stay-signed-block {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.signed-checkbox {
+	margin: 10px 8px;
+}
+
+ 
