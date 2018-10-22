@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './App.css'
+import './App.scss'
 
 class Header extends Component {
 	render() {
@@ -12,8 +12,8 @@ class Header extends Component {
 						<li>Home</li>
 						<li>Browse Movies</li>
 						<li>
-							<a href=''>Login</a>
-							<a href=''>Register</a>
+							<span className=''>Login</span>
+							<span className=''>Register</span>
 						</li>
 					</ul>
 				</nav>

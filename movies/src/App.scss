@@ -1,0 +1,86 @@
+
+.card-wrapper {
+  width: 80%;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 30px;
+  
+}
+.center {
+  text-align: center;
+}
+.card {
+  height: 280px;
+  margin-bottom: 180px;
+}
+.card-img {
+  border: 2px solid rgb(255, 255, 255);
+}
+.header {
+  padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+}
+ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0
+}
+li{
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 10px;
+}
+.nav-list {
+  font-size: 14px;
+  color: rgb(201, 193, 183);
+}
+li span {
+  text-decoration: none;
+  margin: 0 5px;
+  color: white;
+  font-weight: 600;
+}
+.card-title {
+  font-size: 14px;
+  margin: 10px 0;
+}
+.header-search {
+  margin-right: 15px;
+  padding: 8px;
+  background: transparent;
+  border-radius: 15px;
+  border: 1.5px solid rgb(92, 86, 75);
+}
+.btn {
+  cursor: pointer;
+  padding: 7px;
+  color: aliceblue;
+  border: none;
+  background: rgb(161, 10, 73);
+  box-shadow: 0 0 2px 1px rgb(160, 152, 152);
+}
+.btn:hover {
+  box-shadow: 0 0 2px 1px rgb(100, 98, 98);
+  background: rgb(201, 51, 113);
+}
+.watch-trailer-btn {
+  margin-left: 20px;
+  background: rgb(139, 136, 136);
+}
+.hero-section {
+  width: 80%;
+  margin: 0 auto;
+  border-bottom: 1px solid gray;
+}
+.hero-para {
+  width: 70%;
+  margin: 0 auto;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3rem;
+  padding-bottom:50px; 
+}

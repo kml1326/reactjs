@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import Card from './card.js'
 import Header from './Header'
+import HeroSection from './HeroSection'
 
 
 class App extends Component {
@@ -19,17 +20,17 @@ class App extends Component {
       movies : movie.data.movies
     }));
   }
+
   render() {
-    const {title_english, medium_cover_image } = this.props;
     return (
       <div className="App">
          <Header />
-         {/* <HeroSection /> */}
+         <HeroSection />
         <div className="card-wrapper">
         {
           this.state.movies.map(movie => <Card title={movie.title_english} 
-          src={movie.medium_cover_image} />)
-        }
+          src={movie.medium_cover_image} torrent={movie.torrents} />)
+        }  
         </div>        
       </div>
     );
