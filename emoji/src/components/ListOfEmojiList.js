@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import data from '../data.json'
 import '../styles/App.scss';
 
 
 
-class List extends Component{
+class List extends Component {
 
 	render() {
 		return (
@@ -17,14 +16,15 @@ class List extends Component{
 }
 
 
-export class MainSection extends Component {
+export class ListOfEmojiList extends Component {
 
 	render() {
+		const dataobj = this.props.dataArray;
 		return (
 			<ul>
-				{data.map( (object, id) => 
+				{dataobj.map((object, id) => 
 					<List key={id} title={object.title} symbol={object.symbol} />
-					)}
+					)}																																															
 			</ul>
 		);		
 	}

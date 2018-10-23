@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import data from '../data.json'
+import logo1 from '../media/search-emoji.png'
+import logo2 from '../media/search-emoji2.png'
 
 export class Heading extends Component {
 
   render() {
 		return (
-			<h1>Emoji Search</h1>
+			<h1 className='header'>
+				<img src={logo1} alt='search-emoji' />
+				Emoji Search
+				<img src={logo2} alt='search-emoji' />
+			</h1>
 		);
 	}
 }
@@ -13,13 +18,9 @@ export class Heading extends Component {
 
 export class SearchBox extends Component {
 
-	searchEmoji() {
-		console.log('this is:', this);
-	}
-
 	render() {
 		return (
-			<input type='text' className='input'  onKeyDown={this.searchEmoji}/>
+			<input type='text' className='search-input'  onChange={this.props.onSearch}/>
 		);
 }
 
