@@ -12,3 +12,52 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.counters {
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background: rgb(99, 95, 95);
+}
+
+.resetBtn {
+  background: blue;
+}
+.deleteBtn {
+  background: rgb(199, 36, 36);
+}
+.btn-warning {
+  border-radius: 8px;
+  padding: 5px;
+  background: rgb(228, 176, 32);
+}
+.btn-primary {
+  border-radius: 8px;
+  padding: 5px;
+  background: rgb(91, 91, 199);
+  color: white;
+}
+.navbar {
+  text-align: center;
+  padding: 10px;
+  background: rgb(177, 163, 163);
+  a {
+    text-decoration: none;
+  }
+}
+.totalcounters {
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  background: rgb(78, 78, 231);
+  margin-left: 5px;
+  font-size: 14px;
+  font-weight: 700;
+}
