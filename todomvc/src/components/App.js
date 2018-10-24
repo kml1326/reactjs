@@ -6,7 +6,10 @@ class TodoApp extends Component {
   constructor() {
     super();
     this.state = {
-      toDoArray : []
+      activeTab : 'all',
+      toDoArray : [],
+      activeTodoArray : [],
+      completedTodoArray : []
     }
   }
 
@@ -16,7 +19,10 @@ class TodoApp extends Component {
       if(inputValue !== '') {
         let obj = { done: false};
         obj.value = inputValue;
-        this.setState( { toDoArray: [...this.state.toDoArray, obj] } );
+        this.setState( { 
+          toDoArray: [...this.state.toDoArray, obj],
+          activeTodoArray : [...this.state.activeTodoArray, obj]
+         } );
         e.target.value = '';
       }
     }
@@ -25,30 +31,56 @@ class TodoApp extends Component {
   handleDeleteTodo = e => {
     let newArray = this.state.toDoArray;
     newArray.splice( e.target.dataset.id, 1);
-    this.setState( {toDoArray : newArray} );
+    this.setState( {
+      toDoArray : newArray
+    } );
   }
 
   handleToggle = e => {
     let dataId = e.target.dataset.id;
-    this.setState( state => {state.toDoArray[dataId].done = !state.toDoArray[dataId].done})
+    let newArray = [...this.state.toDoArray];
+    newArray[dataId].done = !newArray[dataId].done;
+    let filteredArray = newArray.filter(todo => (todo.done === true));
+    let activeArray = newArray.filter(todo => (todo.done === false));
+    this.setState( {
+      toDoArray : newArray,
+      activeTodoArray : activeArray,
+      completedTodoArray : filteredArray
+    } );
   }
 
   handleAllTodo = () => {
     let allTodo = this.state.toDoArray.map(todo => todo);
-    this.setState( {toDoArray: allTodo} );
+    this.setState( {
+      toDoArray: allTodo,
+      activeTab : 'all'
+    } );
   }
 
   handleActiveTodo = () => {
     let activeTodo = this.state.toDoArray.filter(todo => (todo.done === false))
-    this.setState({toDoArray: activeTodo})
-    console.log(activeTodo);
+    this.setState({
+      activeArray: activeTodo,
+      activeTab : 'active'
+    })
     
   }
 
   handleCompletedTodo = () => {
     let completedTodo = this.state.toDoArray.filter(todo => (todo.done === true))
-    this.setState({toDoArray: completedTodo})
-    console.log(completedTodo,"complete")
+    this.setState({
+      completedTodoArray : completedTodo,
+      activeTab : 'completed'
+    })
+  }
+
+  handleClearComplete = () => {
+    let unCompleteTodo = this.state.toDoArray.filter(todo => (todo.done === false));
+    this.setState( {
+      toDoArray : unCompleteTodo,
+      completedTodoArray : [],
+      activeTab : 'clearCompleted'
+    } )
   }
 
   render() {
@@ -61,14 +93,21 @@ class TodoApp extends Component {
             onKeyDown={this.handleAddTodo}
             placeholder='What nedds to be done ?' 
           />
+
           <TodoLists 
-            Array = { this.state.toDoArray } 
+            array = { this.state.activeTab === 'all' ? this.state.toDoArray :
+                             this.state.activeTab === 'completed' ? this.state.completedTodoArray :
+                              this.state.activeTodoArray}
+            toDoArray = { this.state.toDoArray } 
             onToggle = { this.handleToggle } 
             onDelete = { this.handleDeleteTodo }
             onAllTodo = { this.handleAllTodo } 
             onActiveTodo = { this.handleActiveTodo } 
             onCompletedTodo = { this.handleCompletedTodo }
-          />  
+            activeTab = { this.state.activeTab }
+            handleClearComplete = { this.handleClearComplete }
+          />
+
         </div>
       </div>
     );

@@ -47,7 +47,7 @@ input[type=checkbox]:checked + label {
   margin-right: 15px;
 }
 .toggle:checked {
-  background: rgb(19, 104, 19);
+  background: rgb(111, 158, 111);
 }
 .container {
   display: flex;
@@ -84,9 +84,9 @@ input[type=checkbox]:checked + label {
   .style2 {
     width: 96%;
     margin: 0 auto;
-  
+
   }
-  
+
 }
 .list {
   background: rgb(255, 255, 255);
@@ -98,7 +98,9 @@ input[type=checkbox]:checked + label {
 .todo {
   font-size: 1.3rem;
   font-weight: 300;
+  padding: 10px 50% 10px 0;
 }
+
 .todo-details {
   color: rgb(126, 121, 121);
   background: white;

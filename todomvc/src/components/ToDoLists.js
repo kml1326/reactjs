@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import List from './List';
+import Footer from './Footer';
 
 class ToDoLists extends Component {
 
   render() {
-		const {Array, onToggle, onDelete, onAllTodo, onActiveTodo, onCompletedTodo} = this.props;
-		if(Array.length === 0) {
-			return	<ul></ul> ;
+		const {array, toDoArray, onToggle, onDelete, onAllTodo, onActiveTodo, onCompletedTodo, activeTab, handleClearComplete} = this.props;
+		if(toDoArray.length === 0) {
+			return	<div></div> ;
 		} else
 		return (
 			<ul className='list-of-todo'>
-				{Array.map((data, i) => (
+
+				{array.map((data, i) => (
+
 					<List key={i}
 					 label={data.value} 
 					 done = {data.done}
@@ -19,22 +22,16 @@ class ToDoLists extends Component {
 					 onDelete = {onDelete}
 					/>
 				))}
-				<footer>
-				<p className='todo-details'>
-					<span>
-						<span className='left-todo'>{Array.filter(todo => todo.done === false).length}</span>
-						item left
-					</span>
-					<span>
-						<button onClick={onAllTodo}>All</button>
-						<button onClick={onActiveTodo}>Active</button>
-						<button onClick={onCompletedTodo}>Completed</button>
-					</span>
-					<span className='clear-todo'>Clear completed</span>
-				</p>
-				<p className='bottom style1'></p>
-				<p className='bottom style2'></p>
-				</footer>
+
+				<Footer 
+					array = { array }
+					onAllTodo = { onAllTodo }
+					onActiveTodo = { onActiveTodo }
+					onCompletedTodo = { onCompletedTodo }
+					activeTab = { activeTab }
+					handleClearComplete = { handleClearComplete }
+				/>
+
 			</ul>
 		);
 	}
