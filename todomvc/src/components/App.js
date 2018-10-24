@@ -7,7 +7,7 @@ class TodoApp extends Component {
     super();
     this.state = {
       activeTab : 'all',
-      toDoArray : [],
+      toDoArray : JSON.parse(localStorage.getItem('reactTodo')) || [],
       activeTodoArray : [],
       completedTodoArray : []
     }
@@ -19,6 +19,7 @@ class TodoApp extends Component {
       if(inputValue !== '') {
         let obj = { done: false};
         obj.value = inputValue;
+        localStorage.setItem('reactTodo', JSON.stringify([...this.state.toDoArray, obj]));
         this.setState( { 
           toDoArray: [...this.state.toDoArray, obj],
           activeTodoArray : [...this.state.activeTodoArray, obj]
@@ -31,6 +32,7 @@ class TodoApp extends Component {
   handleDeleteTodo = e => {
     let newArray = this.state.toDoArray;
     newArray.splice( e.target.dataset.id, 1);
+    localStorage.setItem('reactTodo', JSON.stringify(newArray));
     this.setState( {
       toDoArray : newArray
     } );
@@ -42,6 +44,7 @@ class TodoApp extends Component {
     newArray[dataId].done = !newArray[dataId].done;
     let filteredArray = newArray.filter(todo => (todo.done === true));
     let activeArray = newArray.filter(todo => (todo.done === false));
+    localStorage.setItem('reactTodo', JSON.stringify(newArray));
     this.setState( {
       toDoArray : newArray,
       activeTodoArray : activeArray,
@@ -97,8 +100,8 @@ class TodoApp extends Component {
           <TodoLists 
             array = { this.state.activeTab === 'all' ? this.state.toDoArray :
                              this.state.activeTab === 'completed' ? this.state.completedTodoArray :
-                              this.state.activeTodoArray}
-            toDoArray = { this.state.toDoArray } 
+                             this.state.activeTab === 'active' ? this.state.activeArray : this.state.activeTodoArray }
+            toDoArray = { this.state.toDoArray }
             onToggle = { this.handleToggle } 
             onDelete = { this.handleDeleteTodo }
             onAllTodo = { this.handleAllTodo } 

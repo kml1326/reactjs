@@ -30,6 +30,7 @@ class ToDoLists extends Component {
 					onCompletedTodo = { onCompletedTodo }
 					activeTab = { activeTab }
 					handleClearComplete = { handleClearComplete }
+					toDoArray = { toDoArray }
 				/>
 
 			</ul>

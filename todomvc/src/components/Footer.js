@@ -6,7 +6,7 @@ class Footer extends Component {
 			<footer>
 				<p className='todo-details'>
 					<span>
-						<span className='left-todo'>{this.props.array.filter(todo => todo.done === false).length}</span>
+						<span className='left-todo'>{this.props.toDoArray.filter(todo => todo.done === false).length}</span>
 						item left
 					</span>
 					<span>
