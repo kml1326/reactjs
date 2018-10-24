@@ -1,4 +1,139 @@
-.App {
-  text-align: center;
+body {
+  background: rgba(238, 237, 237, 0.945);
 }
-
+.TodoApp {
+  text-align: center;
+  width: 40%;
+  margin: 0 auto;
+}
+.heading {
+  color: rgba(175, 47, 47, 0.15);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 6rem;
+  font-weight: 100;
+  margin: 0;
+  padding: 20px 0;
+}
+li {
+  list-style-type: none;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.deleteToDo {
+  float: right;
+  padding: 5px;
+  border: 0;
+  background: transparent;
+  font-size: 1.2rem;
+  color: rgb(196, 43, 43);
+  outline: none;
+}
+input[type=checkbox]:checked + label {
+	text-decoration: line-through;
+	filter: blur(1px);	
+}
+.toggle {
+  width: 2rem;
+  height: 2rem;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  -webkit-appearance: none;
+  outline: none;
+  margin-right: 15px;
+}
+.toggle:checked {
+  background: rgb(19, 104, 19);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.input-todo {
+  font-size: 1.5rem;
+  background: rgb(255, 255, 255);
+  padding: 16px 16px 16px 60px;
+  border: .2px solid rgb(221, 216, 216);
+  box-shadow: 0px -18px 10px -20px #111 inset;
+  outline: none;
+}
+.input-todo::placeholder {
+  font-size: 1.5rem;
+  font-style: italic;
+	font-weight: 300;
+	color: #e6e6e6;
+}
+.list-of-todo {
+  .bottom {
+    margin: 0;
+    padding: 0;
+    height: 5px;
+    background: rgb(255, 255, 255);
+    border: .2px solid rgb(221, 216, 216);
+    border-top: 0;
+    box-shadow:0 17px 2px -6px rgba(0, 0, 0, 0.2)
+  }
+  .style1 {
+    width: 98%;
+    margin: 0 auto;
+  }
+  .style2 {
+    width: 96%;
+    margin: 0 auto;
+  
+  }
+  
+}
+.list {
+  background: rgb(255, 255, 255);
+  border: .5px solid rgb(196, 192, 192);
+  border-top: 0;
+  text-align: left;
+  padding: 10px 20px 10px 5px; 
+}
+.todo {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+.todo-details {
+  color: rgb(126, 121, 121);
+  background: white;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 10px;
+  border: .2px solid rgb(221, 216, 216);
+  border-top: 0;
+  button {
+    margin: 0 3px;
+    cursor: pointer;
+    color: rgb(126, 121, 121);
+    background: transparent;
+    padding: 3px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+  }
+  button:hover {
+    border: 1px solid rgb(180, 142, 107);
+    
+  }
+  button:focus {
+    border: 1px solid rgb(211, 167, 126);
+  }
+}
+.clear-todo {
+  cursor: pointer;
+}
+.clear-todo:hover {
+  text-decoration: underline;
+}
+.left-todo {
+  margin-right: 5px;
+}
