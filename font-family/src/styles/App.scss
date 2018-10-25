@@ -1,0 +1,52 @@
+.container {
+  width: 80%;
+  margin: 50px auto;
+}
+.text-input {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  outline-color: rgb(35, 129, 206);
+}
+.item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  border: 1px solid rgb(184, 176, 176);
+  border-radius: 5px;
+}
+.font-style {
+  color: white;
+  background-color: rgb(35, 129, 206);
+  text-align: center;
+  padding: 20px 0;
+  width: 200px;
+}
+.text {
+  margin: 0;
+  font-size: 1.5rem;
+  padding: 0 15px;
+}
+.karla {
+  font-family: 'Karla';
+}
+.helvetica-neue {
+  font-family: Helvetica;
+}
+.bree-serif {
+  font-family: 'Bree Serif';
+}
+.lato {
+  font-family: 'Lato';
+}
+.cabin {
+  font-family: 'Cabin';
+}
+.proxima-nova {
+  font-family: 'Proxima Nova';
+}
+.andale-mono {
+  font-family: 'Andale Mono';
+}
