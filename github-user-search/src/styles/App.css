@@ -1,0 +1,95 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
+.wrapper {
+	width: 90%;
+	margin: 0 auto;
+}
+.header {
+	padding: 20px 0;
+	background: #24292e;
+	margin-bottom: 50px;
+}
+.sub-header {
+	font-size: 1.7rem;
+	margin-top: 0;
+}
+a {
+	text-decoration: none;
+}
+.link {
+	color: rgba(24, 170, 61, 0.993);
+	font-weight: 500;
+	font-size: 1.2rem;
+}
+.link:hover {
+	color: rgba(70, 199, 108, 0.993);
+}
+.repo {
+	margin: 40px 0;
+}
+.fa-github {
+	color: white;
+	background: #24292e;
+}
+.container {
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(3, 1fr);
+}
+.logo {
+  padding: 25px;
+}
+.searchBox {
+	padding: 10px;
+	font-size: 1.3rem;
+	outline-color: hsl(6, 7%, 28%);
+}
+.searchBox::-webkit-input-placeholder { 
+	font-family: FontAwesome;
+	font-weight: normal;
+	overflow: visible;
+	vertical-align: top;
+	display: inline-block !important;
+	padding-left: 5px;
+	padding-top: 2px;
+	color: hsl(6, 7%, 28%);
+}
+.follower-name {
+	color: #24292e;
+	font-size: 1.3rem;
+}
+.follower-name:hover {
+	color: rgba(24, 170, 61, 0.993);
+}
+.name {
+	font-size: 1.3rem;
+}
+.user-info {
+	text-align: center;
+}
+.user-overView {
+	padding-top: 30px;
+	display: flex;
+	justify-content: center;
+}
+.overView_item {
+display: flex;
+flex-direction: column;
+margin: 0 15px;
+}
+.overView_count {
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+.follower-img {
+	border-radius: 5px;
+	margin-right: 20px;
+}
+.follower-info {
+	display: flex;
+	margin-top: 20px;
+}
+.fork,
+.star {
+	margin-left: 15px;
+}
