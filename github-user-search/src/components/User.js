@@ -15,24 +15,24 @@ class User extends Component {
 
   handleChanges = (e) => {
     this.setState({userName : e.target.value})
-    if(e.key === 'Enter') {
-      this.handleSubmit();
-    }
   }
 
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.setState({ isLoading : true });
       fetch(`https://api.github.com/users/${this.state.userName}`)
       .then(res => res.json())
       .then(object =>
         {if(object.message) {this.setState({
           error : 'No Internet',
-          isLoading : true
+          isLoading : false
         })} else
         this.setState({
           userData : object,
-          isLoading : true
+          isLoading : false
         })}
       )
+      // this.setState({ isLoading : false });
       
   }
 
@@ -43,8 +43,13 @@ class User extends Component {
           <h1 className='wrapper'>
             <span className='logo'>
             <i className="fab fa-github"></i>
-            </span>      
-            <input type='text' onKeyDown={ this.handleChanges } className='searchBox' placeholder='&#61442;   Search User' />     
+            </span>
+            <form onSubmit={this.handleSubmit} className='form'>
+              <input type='text' onChange={ this.handleChanges } className='searchBox' placeholder='&#61442;   Search User' />     
+            </form>
+            { this.state.isLoading 
+              ? <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+              : '' }   
           </h1>
         </section>
         { this.state.error   

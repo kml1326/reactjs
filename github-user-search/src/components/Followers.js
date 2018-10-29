@@ -14,6 +14,12 @@ class Followers extends Component {
 				this.setState({ followerArray : array })
 		})
 	}
+	componentWillUpdate() {
+		fetch(this.props.data.followers_url)
+		.then(res => res.json()).then(array => {
+				this.setState({ followerArray : array })
+		})
+	}
 
 	render() {
 		return (
