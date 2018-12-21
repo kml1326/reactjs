@@ -31,9 +31,7 @@ class User extends Component {
           userData : object,
           isLoading : false
         })}
-      )
-      // this.setState({ isLoading : false });
-      
+      )      
   }
 
   render() {

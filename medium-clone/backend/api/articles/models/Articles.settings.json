@@ -13,14 +13,6 @@
       "default": "",
       "type": "text"
     },
-    "no_of_claps": {
-      "default": "",
-      "type": "integer"
-    },
-    "title_discription": {
-      "default": "",
-      "type": "text"
-    },
     "post_date": {
       "default": "",
       "type": "date"
@@ -29,7 +21,19 @@
       "default": "",
       "type": "text"
     },
-    "post_image": {
+    "no_of_claps": {
+      "default": "",
+      "type": "integer"
+    },
+    "title_discription": {
+      "default": "",
+      "type": "text"
+    },
+    "bookmark": {
+      "default": false,
+      "type": "boolean"
+    },
+    "img": {
       "model": "file",
       "via": "related",
       "plugin": "upload",
