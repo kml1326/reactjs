@@ -7,7 +7,7 @@ const NavBar = ({totalCounters}) => {
 			<a href="#" className='navbar-title'>
 				Navbar
 				<span className='totalcounters'>
-					{cdtotalCounters}
+					{/* {cdtotalCounters} */}
 				</span>
 			</a>
 

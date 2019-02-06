@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class Contact extends Component {
 
   handlClick = () => {
-    console.log(this.props, "props in contact");
+    console.log(this.props.history, "props in contact");
     this.props.history.push('/');
   }
   

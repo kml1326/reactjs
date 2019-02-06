@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar';
 import Counters from './counters';
+import { PDFViewer } from '@react-pdf/renderer';
+import ReactPDF from '@react-pdf/renderer';
+import Pdf from './Pdf';
 
 class App extends Component {
 	constructor() {
@@ -37,10 +40,14 @@ class App extends Component {
 		this.setState({ counters });
 	};
 
+	handleClick = () => {
+		ReactPDF.render(<Pdf />, `../components/ex.pdf`);
+	}
+
 	render() {
 		return (
 			<div>
-				<NavBar 
+				{/* <NavBar 
 					totalCounters={this.state.counters.filter(c => c.value > 0 ).length}
 				/>
 				<Counters
@@ -48,7 +55,11 @@ class App extends Component {
 					onReset={this.handleReset} 
 					onIncrement={this.handleIncrement} 
 					onDelete={this.handleDelete}
-				/>
+				/> */}
+				<PDFViewer>
+					<Pdf />
+				</PDFViewer>
+				<button onClick={this.handleClick}>Click here</button>
 			</div>
 		);
 	}
